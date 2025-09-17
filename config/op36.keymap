@@ -84,7 +84,7 @@
             bindings = <
   &none           &kp QMARK       &kp RBKT         &kp LT           &kp GRAVE                    &kp CARET  &kp MINUS         &kp Y &kp EQUAL         &kp APOS
   &hml LGUI BSLH  &hml LALT LPAR &hml LSHFT DOT    &hml LCTRL RPAR  &kp RBRC                     &kp PRCNT  &hmr RSHFT UNDER  &hmr RCTRL LBRC  &hmr LALT PLUS  &hmr RGUI EXCL
-  &kp HASH        &kp STAR        &kp LBRC         &kp FSLH         &LBKT                        &RBKT      &kp PIPE         &kp TILDE        &kp AMPS        &kp DLLR
+  &kp HASH        &kp STAR        &kp LBRC         &kp FSLH         &kp LBKT                     &kp RBKT      &kp PIPE         &kp TILDE        &kp AMPS        &kp DLLR
                                                     &trans           &mo 3      &trans    &trans  &trans     &trans
             >;
 
