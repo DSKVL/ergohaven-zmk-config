@@ -60,7 +60,7 @@
 
         base {
             bindings = <
-  &mt ESC Q        &mt TAB W        &kp E         &kp R          &kp T                          &kp Y  &kp U         &kp I         &kp O        &mt LBKT P
+  &mt ESC Q        &mt TAB W        &kp E         &kp R          &kp T                          &kp Y  &kp U         &kp I         &kp O        &mt LBRC P
   &hml LGUI A      &hml LALT S      &hml LCTRL D  &hml LSHFT F   &kp G                          &kp H  &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMICOLON
   &kp Z            &kp X            &kp C         &kp V          &kp B                          &kp N  &kp M         &ac           &kp DOT      &kp FSLH
                                     &scw LSHIFT 0 &lt 1 SPACE    &kp DELETE                     &kp BACKSPACE        &lt 2 ENTER   &kp ESC
