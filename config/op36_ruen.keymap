@@ -52,13 +52,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        rugrtl: grave_tilda {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RU_GRAVE>, <&kp RU_TILDE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         rumdqt: minus_ru_dqout {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -216,7 +209,7 @@
 
         sym_ru {
             bindings = <
-  &rugrtl                 &kp LT          &kp EQUAL         &kp GT           &kp CARET                    &usap      &kp LBKT  &kp RU_QMARK        &kp RBKT   &kp DLLR
+  &kp GRAVE               &kp LT          &kp EQUAL         &kp GT           &kp CARET                    &usap      &kp LBKT  &kp RU_QMARK        &kp RBKT   &kp DLLR
   &hml LGUI RU_BACKSLASH  &hml LALT LPAR  &hml LCTRL MINUS  &hml LSHFT RPAR  &kp PLUS                     &kp PRCNT  &en LBRC  &hmr RCTRL RU_SEMI  &en RBRC   &hmr RGUI EXCL
   &en HASH                &kp STAR        &kp RU_COLON      &kp RU_FSLH      &en AMPS                     &en AT     &en PIPE  &kp RU_DOT          &rumdqt  &kp RU_COMMA
                                                             &trans           &mo 5      &trans    &trans  &none      &trans
