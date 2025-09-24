@@ -45,17 +45,31 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        mdqt: minus_dqout {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp DQT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        rumdqt: minus_ru_dqout {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp RU_DQT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         tdhs: tap_dance_hard_sign {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <150>;
             bindings = <&kp RU_CYRILLIC_SOFT_SIGN>, <&kp RU_CYRILLIC_HARD_SIGN>;
         };
 
         tdyo: tap_dance_yo {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <150>;
             bindings = <&kp RU_CYRILLIC_E>, <&kp RU_CYRILLIC_IO>;
         };
 
@@ -74,19 +88,19 @@
 
         iy {
             bindings = <&kp RU_CYRILLIC_SHORT_I>;
-            key-positions = <1 2>;
+            key-positions = <0 1>;
             layers = <1>;
         };
 
         cmben {
             bindings = <&layer_en>;
-            key-positions = <33 34>;
+            key-positions = <32 33>;
             layers = <0>;
         };
 
         cmbru {
             bindings = <&layer_ru>;
-            key-positions = <33 34>;
+            key-positions = <32 33>;
             layers = <1>;
         };
     };
@@ -163,7 +177,7 @@
             bindings = <
   &mt ESC B    &mt TAB L    &kp D         &kp W          &kp Z                                    &usap        &kp F         &kp O         &kp U        &mt COLON J
   &hml LGUI N  &hml LALT R  &hml LCTRL T  &hml LSHFT S   &kp G                                    &kp Y        &hmr RSHFT H  &hmr RCTRL A  &hmr LALT E  &hmr RGUI I
-  &kp Q        &kp X        &kp M         &kp C          &kp V                                    &kp K        &kp P         &kp DOT       &kp COMMA    &kp FSLH
+  &kp Q        &kp X        &kp M         &kp C          &kp V                                    &kp K        &kp P         &kp DOT       &mdqt    &kp COMMA
                                           &scw LSHIFT 0  &lt 4 SPACE &kp DELETE    &kp BACKSPACE  &lt 2 ENTER  &kp TAB
             >;
 
@@ -184,9 +198,9 @@
 
         sym_en {
             bindings = <
-  &kp TILDE       &kp LT          &kp EQUAL         &kp GT           &kp CARET                    &kp GRAVE  &kp LBKT         &kp UNDER        &kp RBKT        &kp DLLR
+  &kp TILDE       &kp LT          &kp EQUAL         &kp GT           &kp CARET                    &usap      &kp LBKT         &kp QMARK        &kp RBKT        &kp DLLR
   &hml LGUI BSLH  &hml LALT LPAR  &hml LCTRL MINUS  &hml LSHFT RPAR  &kp PLUS                     &kp PRCNT  &hmr RSHFT LBRC  &hmr RCTRL SEMI  &hmr LALT RBRC  &hmr RGUI EXCL
-  &kp HASH        &kp STAR        &kp COLON         &kp FSLH         &kp AMPS                     &kp AT     &kp PIPE         &kp DOT          &kp COMMA       &kp QMARK
+  &kp HASH        &kp STAR        &kp COLON         &kp FSLH         &kp AMPS                     &kp AT     &kp PIPE         &kp DOT          &mdqt       &kp COMMA
                                                     &trans           &mo 5      &trans    &trans  &none      &trans
             >;
 
@@ -195,9 +209,9 @@
 
         sym_ru {
             bindings = <
-  &kp TILDE               &kp LT          &kp EQUAL         &kp GT           &kp CARET                    &kp GRAVE  &kp LBKT         &kp UNDER        &kp RBKT        &kp DLLR
-  &hml LGUI RU_BACKSLASH  &hml LALT LPAR  &hml LCTRL MINUS  &hml LSHFT RPAR  &kp PLUS                     &kp PRCNT  &en LBRC  &hmr RCTRL RU_SEMI  &en RBRC    &hmr RGUI EXCL
-  &en HASH                &kp STAR        &kp RU_COLON      &kp RU_FSLH      &en AMPS                     &en AT     &en PIPE  &kp RU_DOT        &kp RU_COMMA  &kp RU_QMARK
+  &kp TILDE               &kp LT          &kp EQUAL         &kp GT           &kp CARET                    &usap      &kp LBKT  &kp RU_QMARK        &kp RBKT   &kp DLLR
+  &hml LGUI RU_BACKSLASH  &hml LALT LPAR  &hml LCTRL MINUS  &hml LSHFT RPAR  &kp PLUS                     &kp PRCNT  &en LBRC  &hmr RCTRL RU_SEMI  &en RBRC   &hmr RGUI EXCL
+  &en HASH                &kp STAR        &kp RU_COLON      &kp RU_FSLH      &en AMPS                     &en AT     &en PIPE  &kp RU_DOT          &rmdqt  &kp RU_COMMA
                                                             &trans           &mo 5      &trans    &trans  &none      &trans
             >;
 
@@ -207,7 +221,7 @@
         nav {
             bindings = <
   &kp N1         &kp N2    &kp N3     &kp N4     &kp N5                        &kp N6           &kp N7           &kp N8           &kp N9        &kp N0
-  &hml LGUI ESC  &kp LALT  &kp LSHFT  &kp LCTRL  &kp ENTER                     &kp PRINTSCREEN  &hmr RCTRL LEFT  &hmr RSHFT DOWN  &hmr LALT UP  &hmr RGUI RIGHT
+  &hml LGUI ESC  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ENTER                     &kp PRINTSCREEN  &hmr RSHFT LEFT  &hmr RCTRL DOWN  &hmr LALT UP  &hmr RGUI RIGHT
   &layer_en      &layer_ru &none      &none      &kp DELETE                    &kp CAPS         &kp HOME         &kp PG_DN        &kp PG_UP     &kp END
                                       &trans     &none       &trans    &trans  &mo 5            &trans
             >;
@@ -218,7 +232,7 @@
         adj {
             bindings = <
   &bootloader  &kp F1        &kp F2         &kp F3         &kp F4                     &bt BT_SEL 0  &bt BT_SEL 1         &bt BT_SEL 2       &bt BT_SEL 3        &bt BT_CLR
-  &kp LGUI     &hml LALT F5  &hml LSHFT F6  &hml LCTRL F7  &kp F8                     &out OUT_BLE  &hmr RCTRL C_VOL_DN  &hmr RSHFT C_MUTE  &hmr LALT C_VOL_UP  &kp RGUI
+  &kp LGUI     &hml LALT F5  &hml LCTRL F6  &hml LSHFT F7  &kp F8                     &out OUT_BLE  &hmr RSHFT C_VOL_DN  &hmr RCTRL C_MUTE  &hmr LALT C_VOL_UP  &kp RGUI
   &none        &kp F9        &kp F10        &kp F11        &kp F12                    &out OUT_USB  &kp C_PREV           &kp C_PP           &kp C_NEXT          &studio_unlock
                                             &trans         &trans   &trans    &trans  &trans        &trans
             >;
