@@ -151,6 +151,16 @@
             wait-ms = <0>;
         };
 
+        layer_gam: layer_gam {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 1 &to_gam>;
+            label = "LAYER_GAM";
+            tap-ms = <30>;
+            wait-ms = <0>;
+
+        };
+
         en: en {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -178,7 +188,7 @@
   &mt ESC B    &mt TAB L    &kp D         &kp W          &kp Z                                    &usap        &kp F         &kp O         &kp U        &mt COLON J
   &hml LGUI N  &hml LALT R  &hml LCTRL T  &hml LSHFT S   &kp G                                    &kp Y        &hmr RSHFT H  &hmr RCTRL A  &hmr LALT E  &hmr RGUI I
   &kp Q        &kp X        &kp M         &kp C          &kp V                                    &kp K        &kp P         &kp DOT       &mdqt    &kp COMMA
-                                          &scw LSHIFT 0  &lt 4 SPACE &kp DELETE    &kp BACKSPACE  &lt 2 ENTER  &kp TAB
+                                          &scw LSHIFT 0  &lt 5 SPACE &kp DELETE    &kp BACKSPACE  &lt 2 ENTER  &kp TAB
             >;
 
             display-name = "Graphite";
@@ -189,7 +199,7 @@
   &kp RU_CYRILLIC_ZE   &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_GHE        &kp RU_CYRILLIC_YU                             &kp RU_CYRILLIC_HA     &kp RU_CYRILLIC_CHE       &kp RU_CYRILLIC_I   &kp RU_CYRILLIC_PE  &kp RU_CYRILLIC_E
   &kp RU_CYRILLIC_ES   &kp RU_CYRILLIC_VE   &kp RU_CYRILLIC_O   &hml LSHFT RU_CYRILLIC_KA  &kp RU_CYRILLIC_SHORT_I                        &kp RU_CYRILLIC_SHCHA  &hmr RSHFT RU_CYRILLIC_ER &kp RU_CYRILLIC_IE  &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_YA
   &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_BE  &kp RU_CYRILLIC_YERU &kp RU_CYRILLIC_EM         &kp RU_CYRILLIC_EF                             &kp RU_CYRILLIC_TSE    &kp RU_CYRILLIC_EL        &tdhs               &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_U
-                                                                &kp RU_CYRILLIC_HARD_SIGN  &lt 4 SPACE  &kp RU_CYRILLIC_EN  &kp BACKSPACE  &lt 3 ENTER         &kp RU_CYRILLIC_IO
+                                                                &kp RU_CYRILLIC_HARD_SIGN  &lt 5 SPACE  &kp RU_CYRILLIC_EN  &kp BACKSPACE  &lt 3 ENTER         &kp RU_CYRILLIC_IO
             >;
 
             display-name = "Ru";
@@ -200,7 +210,7 @@
   &kp GRAVE       &kp LT          &kp EQUAL         &kp GT           &kp CARET                    &usap      &kp LBKT         &kp QMARK        &kp RBKT        &kp DLLR
   &hml LGUI BSLH  &hml LALT LPAR  &hml LCTRL MINUS  &hml LSHFT RPAR  &kp PLUS                     &kp PRCNT  &hmr RSHFT LBRC  &hmr RCTRL SEMI  &hmr LALT RBRC  &hmr RGUI EXCL
   &kp HASH        &kp STAR        &kp COLON         &kp FSLH         &kp AMPS                     &kp AT     &kp PIPE         &kp DOT          &mdqt       &kp COMMA
-                                                    &trans           &mo 5      &trans    &trans  &none      &trans
+                                                    &trans           &mo 6      &trans    &trans  &none      &trans
             >;
 
             display-name = "Symbols";
@@ -211,18 +221,29 @@
   &kp GRAVE               &kp LT          &kp EQUAL         &kp GT           &kp CARET                    &usap      &kp LBKT  &kp RU_QMARK        &kp RBKT   &kp DLLR
   &hml LGUI RU_BACKSLASH  &hml LALT LPAR  &hml LCTRL MINUS  &hml LSHFT RPAR  &kp PLUS                     &kp PRCNT  &en LBRC  &hmr RCTRL RU_SEMI  &en RBRC   &hmr RGUI EXCL
   &en HASH                &kp STAR        &kp RU_COLON      &kp RU_FSLH      &en AMPS                     &en AT     &en PIPE  &kp RU_DOT          &rumdqt  &kp RU_COMMA
-                                                            &trans           &mo 5      &trans    &trans  &none      &trans
+                                                            &trans           &mo 6      &trans    &trans  &none      &trans
             >;
 
             display-name = "Symbols";
+        };
+
+        gam {
+            bindings = <
+  &kp TAB    &kp Q  &kp W  &kp E  &kp R                          &kp T  &kp Y  &kp U  &kp I     &kp O
+  &kp LSHFT  &kp A  &kp S  &kp D  &kp F                          &kp G  &kp H  &kp J  &kp K     &kp L
+  &kp LCTRL  &kp Z  &kp X  &kp C  &kp V                          &kp B  &kp N  &kp M  &kp COMMA &tog 6 
+                   &kp BACKSPACE  &mo 5  &kp SPACE    &kp ENTER  &mo 2  &kp TAB
+            >;
+
+            display-name = "QWERTY";
         };
 
         nav {
             bindings = <
   &kp N1         &kp N2    &kp N3     &kp N4     &kp N5                        &kp N6           &kp N7           &kp N8           &kp N9        &kp N0
   &hml LGUI ESC  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ENTER                     &kp PRINTSCREEN  &hmr RSHFT LEFT  &hmr RCTRL DOWN  &hmr LALT UP  &hmr RGUI RIGHT
-  &layer_en      &layer_ru &tog 6     &none      &kp DELETE                    &kp CAPS         &kp HOME         &kp PG_DN        &kp PG_UP     &kp END
-                                      &trans     &none       &trans    &trans  &mo 5            &trans
+  &layer_en      &layer_ru &tog 4     &none      &kp DELETE                    &kp CAPS         &kp HOME         &kp PG_DN        &kp PG_UP     &kp END
+                                      &trans     &none       &trans    &trans  &mo 6            &trans
             >;
 
             display-name = "Navigation";
@@ -239,15 +260,5 @@
             display-name = "Adjust";
         };
 
-        gam {
-            bindings = <
-  &kp TAB    &kp Q  &kp W  &kp E  &kp R                          &kp T  &kp Y  &kp U  &kp I     &kp O
-  &kp LSHFT  &kp A  &kp S  &kp D  &kp F                          &kp G  &kp H  &kp J  &kp K     &kp L
-  &kp LCTRL  &kp Z  &kp X  &kp C  &kp V                          &kp B  &kp N  &kp M  &kp COMMA &tog 6 
-                   &kp BACKSPACE  &mo 4  &kp SPACE    &kp ENTER  &mo 2  &kp TAB
-            >;
-
-            display-name = "QWERTY";
-        };
     };
 };
