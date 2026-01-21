@@ -181,7 +181,7 @@
 &kp ESC                    &kp RU_CYRILLIC_GHE   &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_DE        &kp RU_CYRILLIC_HA                       &kp RU_CYRILLIC_SHCHA &kp RU_CYRILLIC_CHE       &kp RU_CYRILLIC_YA &kp RU_CYRILLIC_ZE  &kp RU_CYRILLIC_E    &kp SEMI
 &trans                     &kp RU_CYRILLIC_ES    &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_O   &hml LSHFT RU_CYRILLIC_KA &kp RU_CYRILLIC_SHORT_I                  &kp RU_CYRILLIC_TSE   &hmr RSHFT RU_CYRILLIC_ER &kp RU_CYRILLIC_IE &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_I    &kp COLON
 &kp RU_CYRILLIC_HARD_SIGN  &kp RU_CYRILLIC_SHA   &kp RU_CYRILLIC_ZHE &tdhs               &kp RU_CYRILLIC_BE        &kp RU_CYRILLIC_IO      &trans &trans    &kp RU_CYRILLIC_EF    &kp RU_CYRILLIC_EL        &kp RU_CYRILLIC_U  &kp RU_CYRILLIC_PE  &kp RU_CYRILLIC_YERU &kp RU_CYRILLIC_YU
-                                                                                                   &scw LSHIFT 0  &lt 5 SPACE  &kp RU_CYRILLIC_EN  &kp BACKSPACE  &lt 4 ENTER         &kp TAB
+                                                                                                   &scw LSHIFT 0  &lt 6 SPACE  &kp RU_CYRILLIC_EN  &kp BACKSPACE  &lt 4 ENTER         &kp TAB
             >;
         };
 
@@ -201,7 +201,7 @@
 &trans  &kp GRAVE &kp LT    &kp EQUAL  &kp GT    &kp CARET                    &trans     &kp LBKT  &kp QMARK  &kp RBKT  &kp DLLR   &trans
 &trans  &kp BSLH  &kp LPAR  &kp MINUS  &kp RPAR  &kp PLUS                     &kp PRCNT  &hmr RSHFT LBRC  &hmr RCTRL SEMI   &hmr LALT RBRC  &hmr RGUI EXCL   &kp QUESTION
 &trans  &kp HASH  &kp STAR  &kp COLON  &kp FSLH  &kp AMPS   &trans    &trans  &kp AT     &kp PIPE  &kp DOT    &mdqt     &kp COMMA  &trans
-                                       &trans    &mo 6      &trans    &trans  &trans     &trans
+                                       &trans    &mo 7      &trans    &trans  &trans     &trans
             >;
 
             display-name = "Symbols";
@@ -212,8 +212,8 @@
             bindings = <
 &trans  &en GRAVE    &en LT        &kp EQUAL     &en GT       &en CARET                        &usap           &en LBKT  &kp RU_QMARK  &en RBKT  &en DLLR  &trans
 &trans  &kp RU_BSLH  &kp LPAR      &kp MINUS     &kp RPAR     &kp PLUS                         &kp RU_PERCENT  &en LBRC  &kp RU_SEMI   &kp RBRC  &kp EXCL  &kp RU_QUESTION
-&trans  &en HASH     &kp RU_ASTRK  &kp RU_COLON  &kp RU_FSLH  &kp RU_NUMERO  &trans    &trans  &en AT          &en PIPE  &en RU_DOT    &rumdqt   &kp RU_COMMA  &trans
-                                                 &trans       &mo 6          &trans    &trans  &trans          &trans
+&trans  &en HASH     &kp RU_ASTRK  &kp RU_COLON  &kp RU_FSLH  &kp RU_NUMERO  &trans    &trans  &en AT          &en PIPE  &kp RU_DOT    &rumdqt   &kp RU_COMMA  &trans
+                                                 &trans       &mo 7          &trans    &trans  &trans          &trans
             >;
         };
 
@@ -221,11 +221,22 @@
             bindings = <
   &trans &kp N1         &kp N2    &kp N3     &kp N4     &kp N5                        &kp N6           &kp N7           &kp N8           &kp N9        &kp N0           &trans
   &trans &hml LGUI ESC  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ENTER                     &kp PRINTSCREEN  &hmr RSHFT LEFT  &hmr RCTRL DOWN  &hmr LALT UP  &hmr RGUI RIGHT  &trans
-  &trans &layer_en      &layer_ru &tog 2     &none      &kp DELETE   &trans &trans    &kp CAPS         &kp HOME         &kp PG_DN        &kp PG_UP     &kp END          &trans
-                                          &trans         &trans   &trans    &trans  &mo 6            &trans
+  &trans &layer_ru      &tog 2    &none      &none      &kp DELETE   &trans &trans    &kp CAPS         &kp HOME         &kp PG_DN        &kp PG_UP     &kp END          &trans
+                                          &trans         &trans   &trans    &trans    &mo 7            &trans
             >;
 
             display-name = "Nav";
+        };
+
+        nav-ru {
+            bindings = <
+  &trans &trans         &trans    &trans     &trans     &trans                        &trans           &trans           &trans           &trans        &trans           &trans
+  &trans &trans         &trans    &trans     &trans     &trans                        &trans           &trans           &trans           &trans        &trans           &trans
+  &trans &layer_en      &tog 2    &none      &none      &trans   &trans     &trans    &trans           &trans           &trans           &trans        &trans           &trans
+                                          &trans         &trans   &trans    &trans    &mo 7            &trans
+            >;
+
+            display-name = "Nav(ru)";
         };
 
 
