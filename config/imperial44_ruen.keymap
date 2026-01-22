@@ -115,7 +115,7 @@
         layer_en: layer_en {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &to_en>;
+            bindings = <&tog 0 &to_en>;
             label = "LAYER_EN";
             wait-ms = <0>;
             tap-ms = <30>;
@@ -124,7 +124,7 @@
         layer_ru: layer_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1 &to_ru>;
+            bindings = <&tog 1 &to_ru>;
             label = "LAYER_RU";
             tap-ms = <30>;
             wait-ms = <0>;
@@ -133,7 +133,7 @@
         layer_gam: layer_gam {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1 &to_gam>;
+            bindings = <&tog 2 &to_gam>;
             label = "LAYER_GAM";
             tap-ms = <30>;
             wait-ms = <0>;
@@ -163,8 +163,8 @@
 
         en {
             bindings = <
-&kp ESC    &kp B        &kp L        &kp D         &kp W         &kp Z                                   &usap        &kp F         &kp O         &kp U        &kp J       &kp LBKT
-&kp TAB    &hml LGUI N  &hml LALT R  &hml LCTRL T  &hml LSHFT S  &kp G                                   &kp Y        &hmr RSHFT H  &hmr RCTRL A  &hmr LALT E  &hmr RGUI I &kp RBKT
+&kp ESC    &kp B        &kp L        &kp D         &kp W         &kp Z                                        &usap        &kp F         &kp O         &kp U        &kp J       &kp LBKT
+&kp TAB    &hml LGUI N  &hml LALT R  &hml LCTRL T  &hml LSHFT S  &kp G                                        &kp Y        &hmr RSHFT H  &hmr RCTRL A  &hmr LALT E  &hmr RGUI I &kp RBKT
 &kp LSHFT  &kp Q        &kp X        &kp M         &kp C         &kp V       &kp K_MUTE   &kp K_PLAY_PAUSE    &kp K        &kp P         &kp DOT       &mdqt        &kp COMMA   &kp RSHFT
                                                    &scw LSHIFT 0 &lt 5 SPACE &kp DELETE   &kp BACKSPACE  &lt 3 ENTER  &kp TAB
             >;
@@ -219,9 +219,9 @@
 
         nav {
             bindings = <
-  &trans &kp N1         &kp N2    &kp N3     &kp N4     &kp N5                        &kp N6           &kp N7           &kp N8           &kp N9        &kp N0           &trans
-  &trans &hml LGUI ESC  &kp LALT  &kp LCTRL  &kp LSHFT  &kp ENTER                     &kp PRINTSCREEN  &hmr RSHFT LEFT  &hmr RCTRL DOWN  &hmr LALT UP  &hmr RGUI RIGHT  &trans
-  &trans &layer_ru      &tog 2    &none      &none      &kp DELETE   &trans &trans    &kp CAPS         &kp HOME         &kp PG_DN        &kp PG_UP     &kp END          &trans
+  &trans &kp N1         &kp N2      &kp N3     &kp N4     &kp N5                        &kp N6           &kp N7           &kp N8           &kp N9        &kp N0           &trans
+  &trans &hml LGUI ESC  &kp LALT    &kp LCTRL  &kp LSHFT  &kp ENTER                     &kp PRINTSCREEN  &hmr RSHFT LEFT  &hmr RCTRL DOWN  &hmr LALT UP  &hmr RGUI RIGHT  &trans
+  &trans &layer_ru      &layer_gam  &none      &none      &kp DELETE   &trans &trans    &kp CAPS         &kp HOME         &kp PG_DN        &kp PG_UP     &kp END          &trans
                                           &trans         &trans   &trans    &trans    &mo 7            &trans
             >;
 
@@ -230,9 +230,9 @@
 
         nav-ru {
             bindings = <
-  &trans &trans         &trans    &trans     &trans     &trans                        &trans           &trans           &trans           &trans        &trans           &trans
-  &trans &trans         &trans    &trans     &trans     &trans                        &trans           &trans           &trans           &trans        &trans           &trans
-  &trans &layer_en      &tog 2    &none      &none      &trans   &trans     &trans    &trans           &trans           &trans           &trans        &trans           &trans
+  &trans &kp N1         &kp N2      &kp N3     &kp N4     &kp N5                        &kp N6           &kp N7           &kp N8           &kp N9        &kp N0           &trans
+  &trans &hml LGUI ESC  &kp LALT    &kp LCTRL  &kp LSHFT  &kp ENTER                     &kp PRINTSCREEN  &hmr RSHFT LEFT  &hmr RCTRL DOWN  &hmr LALT UP  &hmr RGUI RIGHT  &trans
+  &trans &layer_en      &layer_gam  &none      &none      &kp DELETE   &trans &trans    &kp CAPS         &kp HOME         &kp PG_DN        &kp PG_UP     &kp END          &trans
                                           &trans         &trans   &trans    &trans    &mo 7            &trans
             >;
 
