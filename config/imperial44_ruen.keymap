@@ -91,7 +91,6 @@
             bindings = <&kp LS(LC(N2))>;
             label = "TO_RU";
             wait-ms = <0>;
-            tap-ms = <30>;
         };
 
         to_en: to_en {
@@ -100,7 +99,6 @@
             bindings = <&kp LS(LC(N1))>;
             label = "TO_EN";
             wait-ms = <0>;
-            tap-ms = <30>;
         };
 
         to_gam: to_gam {
@@ -109,7 +107,6 @@
             bindings = <&kp LS(LC(N3))>;
             label = "TO_GAM";
             wait-ms = <0>;
-            tap-ms = <30>;
         };
 
         layer_en: layer_en {
@@ -151,7 +148,6 @@
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
                 <&to_ru>;
-
             label = "EN";
             wait-ms = <0>;
             tap-ms = <30>;
